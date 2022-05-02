@@ -4,9 +4,8 @@
 
 :clap: If you read this file, you were successful in the behavioural interview. Well done!
 
-The next step to join the Data Science team of [xtream](https://xtreamers.io) is this assignment. 
-
-You will find several datasets: please choose only one of them.
+:rocket: The next step to join the Data Science team of [xtream](https://xtreamers.io) is this assignment. 
+You will find several datasets: please choose **only one**.
 For each dataset, we propose several challenges. You **do not need to
 complete all of them**, but rather only the ones you feel comfortable about or that interest you.
 
@@ -16,12 +15,12 @@ complete all of them**, but rather only the ones you feel comfortable about or t
 solution, so that you can do it at your own pace.
 
 :heavy_exclamation_mark:**Important**: you might feel like the tasks are somehow too broad, or the requirements are not
-fully elicited. **This is done on purpose**: we wish to let you take your own way in extracting value from data and in developing
+fully elicited. **This is done on purpose**: we wish to let you take your own way in extracting value from the data and in developing
 your own solutions.
 
 ### Deliverables
 
-Please fork this repository and work on it as if you were working on a real-world project assigned to you. A week from
+Please fork this repository and work on it as if you were working on a real-world project. A week from
 now, we will check out your work and evaluate it.
 
 :heavy_exclamation_mark:**Important**: At the end of this README, you will find a "How to run" section that is not
