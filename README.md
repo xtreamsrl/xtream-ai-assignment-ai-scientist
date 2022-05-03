@@ -11,7 +11,7 @@ complete all of them**, but rather only the ones you feel comfortable about or t
 
 :sparkles: Choose what really makes you shine!
 
-:watch: We estimate it should take around 8 hours to solve the challenges for a dataset, and we give you **1 week** to submit a
+:watch: We estimate it should take around 8 hours to solve the challenges for a dataset, and we give you **10 days** to submit a
 solution, so that you can do it at your own pace.
 
 :heavy_exclamation_mark:**Important**: you might feel like the tasks are somehow too broad, or the requirements are not
@@ -20,7 +20,7 @@ your own solutions.
 
 ### Deliverables
 
-Please fork this repository and work on it as if you were working on a real-world project. A week from
+Please fork this repository and work on it as if you were working on a real-world project. 10 days from
 now, we will check out your work and evaluate it.
 
 :heavy_exclamation_mark:**Important**: At the end of this README, you will find a "How to run" section that is not
