@@ -1,14 +1,14 @@
 # Employee Churn Dataset
-The dataset contains factors which may that lead a person to leave the current job.
+The dataset contains factors which may that influence a person's intention to leave its job.
 
 It contains sociodemographic variables, as well as indicators of the past behaviour of each candidate.
 All the data were collected in a short period of time and each person corresponds to a single sample in the dataset.
 
 ### Features
 
-- enrollee_id : Unique ID for candidate 
+- enrollee_id: Unique ID for candidate 
 - city: City code 
-- city_development_index : Development index of the city (scaled)
+- city_development_index: Development index of the city (scaled)
 - gender: Gender of candidate 
 - relevant_experience: Relevant experience of candidate 
 - enrolled_university: Type of University course enrolled if any 

@@ -5,7 +5,7 @@ Physical measurements are explained by the following picture.
 
 ![Diamond measures](_md-images/diamonds-1.png)
 
-The carat is a unit of mass equal to 200 mg and is used for measuring gemstones and pearls. Cut grade is is an objective measure of a diamond’s light performance, or, what we generally think of as sparkle.
+The carat is a unit of mass equal to 200 mg and is used for measuring gemstones and pearls. Cut grade is an objective measure of a diamond’s light performance, or, what we generally think of as sparkle.
 
 The figure below shows color grading of diamonds.
 
