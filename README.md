@@ -2,7 +2,7 @@
 
 ## Introduction
 
-If you read this file, you were successful in the behavioural interview. Well done! :clap: :clap: :clap:
+If you read this file, you have passed our initial screening. Well done! :clap: :clap: :clap:
 
 :rocket: The next step to join the Data Science team of [xtream](https://xtreamers.io) is this assignment. 
 You will find several datasets: please choose **only one**.
@@ -11,8 +11,7 @@ complete all of them**, but rather only the ones you feel comfortable about or t
 
 :sparkles: Choose what really makes you shine!
 
-:watch: We estimate it should take less than 8 hours to solve the challenges for a dataset, and we give you **10 days** to submit a
-solution, so that you can move at your own pace.
+:watch: The deadline for submission is **10 days** after you are provided with the link to this repository, so that you can move at your own pace.
 
 :heavy_exclamation_mark: **Important**: you might feel the tasks are too broad, or the requirements are not
 fully elicited. **This is done on purpose**: we wish to let you take your own way in 
@@ -30,11 +29,11 @@ Please write there instructions on how to run your code.
 
 Your work will be assessed according to several criteria, for instance:
 
-* Method
+* Work Method
+* Understanding of the business problem
 * Understanding of the data
-* Completeness and clarity of the results
-* Code quality
-* Work quality (use of git, dataset management, workflow, tests, ...)
+* Correctness, completeness, and clarity of the results
+* Quality of the codebase
 * Documentation
 
 :heavy_exclamation_mark: **Important**: this is not a Kaggle competition, we do not care about model performance.
