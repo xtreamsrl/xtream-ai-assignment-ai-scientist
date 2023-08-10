@@ -113,7 +113,7 @@ Be sure to answer their concerns in your notebook.
 Long-term was great, but what about short term?
 **Your next task is to create a short-term model to predict the power load 1 day ahead.**
 Disregard 2020, 2021, and 2022: use 2019 as test.
-Keep im mind Marta's advice from the previous challenge! 
+Keep in mind Marta's advice from the previous challenge! 
 
 #### Challenge 4
 
