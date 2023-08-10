@@ -1,0 +1,55 @@
+default_install_hook_types:
+  - pre-commit
+  - pre-push
+default_language_version:
+  python: python3.10
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: check-added-large-files
+        args: [--maxkb=5120]
+  - repo: local
+    hooks:
+      - id: black
+        name: black
+        entry: pdm run black
+        language: system
+        types: [python]
+      - id: blacken-docs
+        name: blacken-docs
+        entry: pdm run blacken-docs
+        language: system
+        types: [python, tex, markdown, rst]
+        files: '^(src/|docs/|tests/)'
+      - id: ruff
+        name: ruff (isort)
+        alias: isort
+        entry: pdm run ruff
+        args: [--select=I001, --fix]
+        language: system
+        types: [python]
+      - id: ruff
+        name: ruff
+        entry: pdm run ruff
+        language: system
+        types: [python]
+      - id: mypy
+        name: mypy
+        entry: pdm run mypy
+        language: system
+        types: [python]
+        files: '^(src/|docs/|tests/)'
+      - id: commitizen
+        name: commitizen
+        entry: pdm run cz check
+        pass_filenames: false
+        args: [--rev-range, origin/main..HEAD]
+        language: system
+        types: [python]
+        stages: [push]
