@@ -1,0 +1,137 @@
+[project]
+name = "powerload"
+description = "🔋 Forecast power load"
+authors = [
+    {name = "baggiponte", email = "57922983+baggiponte@users.noreply.github.com"},
+]
+license = {text = "MIT"}
+readme = "README.md"
+dynamic = ["version"]
+requires-python = ">=3.10"
+dependencies = [
+    "scikit-learn>=1.3.0",
+    "polars[pandas]>=0.18.13",
+]
+
+[project.optional-dependencies]
+eda = [
+    "seaborn>=0.12.2",
+    "solara>=1.19.0",
+    "jupyterlab>=4.0.5",
+]
+[tool.pdm.dev-dependencies]
+precommit = [
+    "pre-commit>=2.20.0",
+    "black>=23.3.0",
+    "blacken-docs>=1.14.0",
+    "deptry>=0.12.0",
+    "mypy>=1.3.0",
+    "pip-audit>=2.5.6",
+    "ruff>=0.0.272",
+]
+docs = [
+    "mkdocs>=1.4.2",
+    "mkdocs-material>=9.0.2",
+    "mkdocstrings[python]>=0.20.0",
+    "mike>=1.1.2",
+    "setuptools>=67.5.1",
+]
+test = [
+    "pytest>=7.2.0",
+    "pytest-cov>=4.0.0",
+]
+release = [
+    "commitizen>=2.42.0",
+]
+
+[tool.pdm.version]
+source = "file"
+path = "src/powerload/__init__.py"
+
+[tool.pdm.build]
+excludes = ["**/.DS_Store"]
+package-dir = "src"
+source-includes = ["tests", "CHANGELOG.md", "README.md"]
+
+[tool.ruff]
+src = ["src"]
+target-version = "py310"
+line-length = 88
+
+select = [
+  # default
+  "E",      # pycodestyle error
+  "F",      # flake8 error
+  # extra
+  "A",      # builtin shadowing
+  "B",      # flake8 bugbear
+  "BLE",    # aboid bare excepts
+  "C4",     # simplify comprehensions
+  "D",      # pydocstyle
+  "DTZ",    # datetime errors
+  "FBT",    # avoid boolean trap
+  "G",      # logging format
+  "I",      # isort imports
+  "N",      # conform to PEP8 naming rules
+  "RET",    # return values
+  "S",      # bandit
+  "TRY",    # exceptions antipatterns
+  "UP",     # upgade syntax
+  "W",      # pycodestyle warning
+  "YTT",    # wrong usage of sys.info
+]
+fix = true
+ignore = ["D107", "E501", "TRY003"]
+
+  [tool.ruff.per-file-ignores]
+  "__init__.py" = ["F401", "I002"]
+
+  [tool.ruff.pydocstyle]
+  convention = "google"
+
+  [tool.ruff.pycodestyle]
+  max-doc-length = 88
+
+  [tool.ruff.isort]
+  required-imports = ["from __future__ import annotations"]
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.1.0"
+version_files = ["src/powerload/__init__.py:^__version__"]
+annotated_tag = true
+incremental = true
+update_changelog_on_bump = true
+check_consistency = true
+
+  [tool.commitizen.change_type_map]
+  feat = "⚡ Feat"
+  fix = "🐞 Fix"
+  perf = "🚀 Performance"
+  refactor = "🛠  Refactor"
+  docs = "📚 Docs"
+
+[tool.mypy]
+python_version = "3.9"
+python_executable = ".venv/bin/python"
+show_error_codes = true
+
+check_untyped_defs = true
+disallow_any_unimported = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+warn_return_any = true
+warn_unused_ignores = true
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+pythonpath = "src"
+
+[tool.pyright]
+exclude = [ ".venv" ]
+venvPath = "."
+venv = ".venv"
+
+[build-system]
+requires = ["pdm-pep517>=1.0"]
+build-backend = "pdm.pep517.api"
