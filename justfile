@@ -19,6 +19,10 @@ update:
   pdm run pre-commit install-hooks
   pdm run pre-commit autoupdate
 
+# Launch a jupyter lab instance
+lab:
+  pdm run jupyter-lab
+
 # Format code with black and isort
 @fmt:
   pdm run black -- src tests
