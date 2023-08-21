@@ -87,7 +87,7 @@ ignore = ["D107", "E501", "TRY003"]
   "__init__.py" = ["F401", "I002"]
 
   [tool.ruff.pydocstyle]
-  convention = "google"
+  convention = "numpy"
 
   [tool.ruff.pycodestyle]
   max-doc-length = 88
@@ -112,8 +112,9 @@ check_consistency = true
   docs = "📚 Docs"
 
 [tool.mypy]
-python_version = "3.9"
+python_version = "3.10"
 python_executable = ".venv/bin/python"
+plugins = "numpy.typing.mypy_plugin"
 show_error_codes = true
 
 check_untyped_defs = true
@@ -122,6 +123,10 @@ disallow_untyped_defs = true
 no_implicit_optional = true
 warn_return_any = true
 warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = "sklearn.*"
+ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 testpaths = "tests"
