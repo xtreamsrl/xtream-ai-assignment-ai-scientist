@@ -5,21 +5,20 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-import numpy as np
 import polars as pl
 
 __all__ = ["fetch_powerload"]
 
 from typing import TYPE_CHECKING, overload
 
+from powerload.utils import Dataset, as_2d_array
+
 if TYPE_CHECKING:
-    from typing import Literal, TypeAlias
+    from typing import Literal
 
-    import numpy.typing as npt
+    import pandas as pd
 
-    DateLoadNDArrayTuple: TypeAlias = tuple[
-        npt.NDArray[np.datetime64], npt.NDArray[np.float64]
-    ]
+    from powerload.types import DatetimeArray, NumericArray
 
 
 def _get_data_home(data_home: str | Path | None = None) -> Path:
@@ -34,9 +33,10 @@ def _get_data_home(data_home: str | Path | None = None) -> Path:
 @overload
 def fetch_powerload(
     *,
-    data_home: str | Path | None = None,
-    download_if_missing: bool = True,
-    as_frame: Literal[True],
+    data_home: str | Path | None,
+    download_if_missing: bool,
+    parser: Literal["polars"],
+    return_X_y: Literal[True],
 ) -> pl.DataFrame:
     ...
 
@@ -44,10 +44,55 @@ def fetch_powerload(
 @overload
 def fetch_powerload(
     *,
-    data_home: str | Path | None = None,
-    download_if_missing: bool = True,
-    as_frame: Literal[False] = False,
-) -> DateLoadNDArrayTuple:
+    data_home: str | Path | None,
+    download_if_missing: bool,
+    parser: Literal["pandas"],
+    return_X_y: Literal[True],
+) -> pd.DataFrame:
+    ...
+
+
+@overload
+def fetch_powerload(
+    *,
+    data_home: str | Path | None,
+    download_if_missing: bool,
+    parser: Literal["numpy"],
+    return_X_y: Literal[True],
+) -> tuple[DatetimeArray, NumericArray]:
+    ...
+
+
+@overload
+def fetch_powerload(
+    *,
+    data_home: str | Path | None,
+    download_if_missing: bool,
+    parser: Literal["polars"],
+    return_X_y: Literal[False],
+) -> Dataset[pl.DataFrame]:
+    ...
+
+
+@overload
+def fetch_powerload(
+    *,
+    data_home: str | Path | None,
+    download_if_missing: bool,
+    parser: Literal["pandas"],
+    return_X_y: Literal[False],
+) -> Dataset[pd.DataFrame]:
+    ...
+
+
+@overload
+def fetch_powerload(
+    *,
+    data_home: str | Path | None,
+    download_if_missing: bool,
+    parser: Literal["numpy"],
+    return_X_y: Literal[False],
+) -> Dataset[tuple[DatetimeArray, NumericArray]]:  # type: ignore[type-var]
     ...
 
 
@@ -55,31 +100,37 @@ def fetch_powerload(
     *,
     data_home: str | Path | None = None,
     download_if_missing: bool = True,
-    as_frame: bool = False,
-) -> pl.DataFrame | DateLoadNDArrayTuple:
+    parser: Literal["polars", "pandas", "numpy"] = "numpy",
+    return_X_y: bool = False,
+) -> (
+    pl.DataFrame  # type: ignore[type-var]
+    | pd.DataFrame
+    | tuple[DatetimeArray, NumericArray]
+    | Dataset[pl.DataFrame]
+    | Dataset[pd.DataFrame]
+    | Dataset[tuple[DatetimeArray, NumericArray]]
+):
     """Load the Italian Powerload dataset.
 
     Parameters
     ----------
     data_home : str or Path, default=None
-        The directory path to use for caching the dataset. The default is
-        '~/powerload_data', where the data is stored in subfolders.
+        The directory path to use for caching the dataset. Default is
+        '~/powerload_data' if `POWERLOAD_DATA` environment variable is not set.
 
     download_if_missing : bool, default=True
-        If False, an OSError will be raised if the dataset is not available
-        locally, instead of attempting to download it from the source site.
+        If True, the dataset will be downloaded from the source URL.
 
-    as_frame : bool, default=False
-        If True, the data is returned as a polars DataFrame with columns
-        having appropriate data types (numeric, string, or categorical).
-        The target is a polars DataFrame or Series depending on the number
-        of target_columns.
+    parser : Literal["pandas", "polars", "numpy"], default="numpy"
+        If "polars", the data is returned as a polars DataFrame.
+        If "pandas", the data is returned as a pandas DataFrame.
+        If "numpy", the data is returned as a tuple of (-1, 1)-shaped numpy arrays.
 
     Returns
     -------
-    data : pl.DataFrame or tuple[np.ndarray[np.datetime64], np.ndarray[np.float64]]
-        The powerload data. If `as_frame` is True, a polars DataFrame is returned.
-        Otherwise, a tuple containing two numpy arrays is returned:
+    data : polars.DataFrame or tuple[DateTimeArray, FloatArray]
+        The powerload data. If `parser` is True, a polars DataFrame is returned.
+        Otherwise, a tuple of (-1, 1)-shaped numpy arrays:
         - The first array contains dates represented as np.datetime64.
         - The second array contains powerload values represented as np.float64.
 
@@ -91,27 +142,51 @@ def fetch_powerload(
     data_home_: Path = _get_data_home(data_home)
     data_home_.mkdir(exist_ok=True)
 
-    data: pl.DataFrame
+    dataset: pl.DataFrame
 
     try:
-        data = pl.read_csv(
+        dataset = pl.read_csv(
             data_home_ / "powerload.csv",
             dtypes=[pl.Date, pl.Float32],
             new_columns=["date", "load"],
         )
-    except FileNotFoundError as e:
-        if not download_if_missing:
-            raise OSError("Data not found and `download_if_missing` is False") from e
-
+    except FileNotFoundError:
         url: str = "https://raw.githubusercontent.com/xtreamsrl/xtream-ai-assignment/main/datasets/italian-power-load/load.csv"
-        data = pl.read_csv(
+        dataset = pl.read_csv(
             url,
             dtypes=[pl.Date, pl.Float32],
             new_columns=["date", "load"],
         )
 
-        data.write_csv(data_home_ / "powerload.csv")
+        if download_if_missing:
+            dataset.write_csv(data_home_ / "powerload.csv")
 
-    if as_frame:
-        return data
-    return np.array(data["date"]), data["load"].to_numpy()
+    if parser == "polars" and return_X_y:
+        return dataset
+    if parser == "pandas" and return_X_y:
+        return dataset.to_pandas()
+    if parser == "numpy" and return_X_y:
+        return as_2d_array(dataset["date"]), as_2d_array(dataset["load"])
+
+    if parser == "polars":
+        return Dataset(
+            data=dataset,
+            feature_names=["date"],
+            target_names=["load"],
+            DESCR="The data represents powerload data in Italy, expressed in GW, at the daily level. Data ranges from 2006-01-01 to 2022-02-07, for a total of 5882 observations.",
+        )
+
+    if parser == "pandas":
+        return Dataset(
+            data=dataset.to_pandas(),
+            feature_names=["date"],
+            target_names=["load"],
+            DESCR="The data represents powerload data in Italy, expressed in GW, at the daily level. Data ranges from 2006-01-01 to 2022-02-07, for a total of 5882 observations.",
+        )
+
+    return Dataset(  # type: ignore[return-value]
+        data=(as_2d_array(dataset["date"]), as_2d_array(dataset["load"])),
+        feature_names=["date"],
+        target_names=["load"],
+        DESCR="The data represents powerload data in Italy, expressed in GW, at the daily level. Data ranges from 2006-01-01 to 2022-02-07, for a total of 5882 observations.",
+    )
