@@ -20,7 +20,7 @@ update:
   pdm run pre-commit autoupdate
 
 # Launch a jupyter lab instance
-lab:
+@lab:
   pdm run jupyter-lab
 
 # Format code with black and isort
