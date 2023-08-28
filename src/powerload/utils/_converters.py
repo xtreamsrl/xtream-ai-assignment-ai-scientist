@@ -25,7 +25,12 @@ __all__ = [
 
 def as_2d_array(x: npt.ArrayLike) -> npt.NDArray:
     """Convert an array-like object to a NumPy array with shape (-1, 1)."""
-    return np.asarray(x).reshape(-1, 1)
+    x_: npt.NDArray = np.asarray(x)
+    if x_.ndim == 1:
+        return x_.reshape(-1, 1)
+    if x_.ndim > 2:
+        raise NotImplementedError("Only 1D and 2D arrays are supported.")
+    return x_
 
 
 def check_is_positive_finite(
