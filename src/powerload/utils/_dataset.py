@@ -10,26 +10,20 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Generic, TypeVar
 
 import numpy as np
-import numpy.typing as npt
 import pandas as pd
 import polars as pl
 
 if TYPE_CHECKING:
-    pass
+    import numpy.typing as npt
 
-T = TypeVar(
-    "T",
-    pl.DataFrame,
-    pd.DataFrame,
-    tuple[npt.NDArray[np.generic], npt.NDArray[np.generic]],
-)
+_T = TypeVar("_T", np.datetime64, np.integer, np.float64)
 
 
 @dataclass
-class Dataset(Generic[T]):
+class Dataset(Generic[_T]):
     """An object retrieved from a `fetch_*` function in `powerload.datasets`."""
 
-    data: T
+    data: pl.DataFrame | pd.DataFrame | tuple[npt.NDArray[_T], npt.NDArray[_T]]
     feature_names: list[str]
     target_names: list[str]
     DESCR: str | None = None

@@ -70,7 +70,7 @@ def fetch_powerload(
     download_if_missing: bool,
     parser: Literal["polars"],
     return_X_y: Literal[False],
-) -> Dataset[pl.DataFrame]:
+) -> Dataset:
     ...
 
 
@@ -81,7 +81,7 @@ def fetch_powerload(
     download_if_missing: bool,
     parser: Literal["pandas"],
     return_X_y: Literal[False],
-) -> Dataset[pd.DataFrame]:
+) -> Dataset:
     ...
 
 
@@ -92,7 +92,7 @@ def fetch_powerload(
     download_if_missing: bool,
     parser: Literal["numpy"],
     return_X_y: Literal[False],
-) -> Dataset[tuple[DatetimeArray, NumericArray]]:  # type: ignore[type-var]
+) -> Dataset:
     ...
 
 
@@ -102,14 +102,7 @@ def fetch_powerload(
     download_if_missing: bool = True,
     parser: Literal["polars", "pandas", "numpy"] = "numpy",
     return_X_y: bool = False,
-) -> (
-    pl.DataFrame  # type: ignore[type-var]
-    | pd.DataFrame
-    | tuple[DatetimeArray, NumericArray]
-    | Dataset[pl.DataFrame]
-    | Dataset[pd.DataFrame]
-    | Dataset[tuple[DatetimeArray, NumericArray]]
-):
+) -> pl.DataFrame | pd.DataFrame | tuple[DatetimeArray, NumericArray] | Dataset:
     """Load the Italian Powerload dataset.
 
     Parameters
@@ -184,7 +177,7 @@ def fetch_powerload(
             DESCR="The data represents powerload data in Italy, expressed in GW, at the daily level. Data ranges from 2006-01-01 to 2022-02-07, for a total of 5882 observations.",
         )
 
-    return Dataset(  # type: ignore[return-value]
+    return Dataset(
         data=(as_2d_array(dataset["date"]), as_2d_array(dataset["load"])),
         feature_names=["date"],
         target_names=["load"],
