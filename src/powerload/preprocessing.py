@@ -13,6 +13,11 @@ from itertools import chain
 from math import pi
 
 
+def add_time_steps(data: pl.DataFrame) -> pl.DataFrame:
+    """Add a time step column."""
+    return data.with_columns(pl.int_range(0, len(data), eager=False).alias("time"))
+
+
 def add_fourier_terms(data: pl.DataFrame, K: int, seasonal_period: int) -> pl.DataFrame:
     """Add Fourier."""
     if K > seasonal_period / 2:
