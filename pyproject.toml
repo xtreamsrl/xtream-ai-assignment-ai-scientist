@@ -136,6 +136,18 @@ warn_unused_ignores = true
 module = "sklearn.*"
 ignore_missing_imports = true
 
+[[tool.mypy.overrides]]
+module = "matplotlib.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "seaborn.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "statsmodels.*"
+ignore_missing_imports = true
+
 [tool.pytest.ini_options]
 testpaths = "tests"
 pythonpath = "src"
