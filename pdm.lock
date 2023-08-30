@@ -6,7 +6,7 @@ groups = ["default", "docs", "ide", "precommit", "release", "test", "eda", "fore
 cross_platform = true
 static_urls = false
 lock_version = "4.3"
-content_hash = "sha256:4ee1083298c09c93e0e2867328cdbca7570d7c41393703b4a0551b2ef18f735b"
+content_hash = "sha256:61cf0a54bdce7cbcbfbc33ebc7d0f9f13c9636d91bf8d61f10a7fc13f98ab3bc"
 
 [[package]]
 name = "anyio"
@@ -1640,6 +1640,19 @@ dependencies = [
 files = [
     {file = "nbformat-5.9.2-py3-none-any.whl", hash = "sha256:1c5172d786a41b82bcfd0c23f9e6b6f072e8fb49c39250219e4acfff1efe89e9"},
     {file = "nbformat-5.9.2.tar.gz", hash = "sha256:5f98b5ba1997dff175e77e0c17d5c10a96eaed2cbd1de3533d1fc35d5e111192"},
+]
+
+[[package]]
+name = "nbstripout"
+version = "0.6.1"
+requires_python = ">=3.6"
+summary = "Strips outputs from Jupyter and IPython notebooks"
+dependencies = [
+    "nbformat",
+]
+files = [
+    {file = "nbstripout-0.6.1-py2.py3-none-any.whl", hash = "sha256:5ff6eb0debbcd656c4a64db8e082a24fabcfc753a9e8c9f6d786971e8f29e110"},
+    {file = "nbstripout-0.6.1.tar.gz", hash = "sha256:9065bcdd1488b386e4f3c081ffc1d48f4513a2f8d8bf4d0d9a28208c5dafe9d3"},
 ]
 
 [[package]]
