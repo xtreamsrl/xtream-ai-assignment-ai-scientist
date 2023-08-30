@@ -18,7 +18,7 @@ dependencies = [
 eda = [
     "seaborn>=0.12.2",
     "jupyterlab>=4.0.5",
-    "ipywidgets>=8.1.0",
+    "statsmodels>=0.14.0",
 ]
 [tool.pdm.dev-dependencies]
 precommit = [
