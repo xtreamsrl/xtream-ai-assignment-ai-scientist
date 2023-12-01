@@ -1,46 +1,49 @@
-# xtream AI Assignment
+# xtream AI Challenge
 
-## Introduction
+## Ready Player 1? 🚀
 
-If you read this file, you have passed our initial screening. Well done! :clap: :clap: :clap:
+Hey there! If you're reading this, you've already aced our first screening. Awesome job! 👏👏👏
 
-:rocket: The next step to join the AI team of [xtream](https://xtreamers.io) is this assignment. 
-You will find several datasets: please choose **only one**.
-For each dataset, we propose several challenges. You **do not need to
-complete all of them**, but rather only the ones you feel comfortable about or the ones that interest you. 
+Welcome to the next level of your journey towards the [xtream](https://xtreamers.io) AI squad. Here's your cool new assignment.
 
-:sparkles: Choose what really makes you shine!
+Among the datasets described below, pick **just one** that catches your eye. Each dataset comes with its own set of challenges. Don't stress about doing them all. Just dive into the ones that spark your interest or that you feel confident about. Let your talents shine bright! ✨
 
-:watch: The deadline for submission is **10 days** after you are provided with the link to this repository, 
-so that you can move at your own pace.
+Take your time – you've got **10 days** to show us your magic, starting from when you get this. No rush, work at your pace. If you need more time, just let us know. We're here to help you succeed. 🤝
 
-:heavy_exclamation_mark: **Important**: you might feel the tasks are too broad, or the requirements are not
-fully elicited. **This is done on purpose**: we wish to let you take your own way in 
-extracting value from the data and in developing your own solutions.
+🚨 **Heads Up**: You might think the tasks are a bit open-ended or the instructions aren't super detailed. That’s intentional! We want to see how you creatively make the most out of the data and craft your own effective solutions.
 
-### Deliverables
+### What You Need to Do
 
-Please fork this repository and work on it as if you were taking on a real-world project. 
-On the deadline, we will check out your work.
+Think of this as a real-world project. Fork this repo and treat it as if you're working on something big! When the deadline hits, we'll be excited to check out your work. No need to tell us you're done – we'll know. 😎
 
-:heavy_exclamation_mark: **Important**: At the end of this README, you will find a blank "How to run" section. 
-Please write there instructions on how to run your code.
+🚨 **Remember**: At the end of this doc, there's a "How to run" section left blank just for you. Please fill it in with instructions on how to run your code – it's important!
 
-### Evaluation
+### How We'll Evaluate Your Work
 
-Your work will be assessed according to several criteria, for instance:
+We'll be looking at a bunch of things to see how awesome your work is, like:
 
-* Work Method
-* Understanding of the business problem
-* Understanding of the data
-* Correctness, completeness, and clarity of the results
-* Correct use of the tools (git workflow, use of Python libraries, etc.)
-* Quality of the codebase
-* Documentation
+* Your approach and method
+* How well you get the business problem
+* Your understanding of the data
+* The clarity and completeness of your findings
+* How you use your tools (like git and Python packages)
+* The neatness of your code
+* The clarity of your documentation
 
-:heavy_exclamation_mark: **Important**: this is not a Kaggle competition, we do not care about model performance.
-No need to get the best possible model: focus on showing your method and why you would be able to get there,
-given enough time and support.
+🚨 **Keep This in Mind**: This isn't about building the fanciest model: we're more interested in your process and thinking.
+
+## Special Note for Interns
+
+If you're aiming for an internship, focus **only on Challenges 1 and 2** for the dataset you choose.
+
+We'll mainly look at:
+
+* Your workflow
+* How well you understand the problem and data
+* The approach to the analysis and clarity of your conclusions
+* How neat your code is (relative to your experience level)
+
+This is your chance to showcase your unique approach and thought process. Don't worry if your code isn't perfect or your model isn't top-notch yet. We've been in your shoes and are here to help you grow. 🌟
 
 ---
 
