@@ -10,11 +10,11 @@ Among the datasets described below, pick **just one** that catches your eye. Eac
 
 Take your time – you've got **10 days** to show us your magic, starting from when you get this. No rush, work at your pace. If you need more time, just let us know. We're here to help you succeed. 🤝
 
-🚨 **Heads Up**: You might think the tasks are a bit open-ended or the instructions aren't super detailed. That’s intentional! We want to see how you creatively make the most out of the data and craft your own effective solutions.
-
 ### What You Need to Do
 
 Think of this as a real-world project. Fork this repo and treat it as if you're working on something big! When the deadline hits, we'll be excited to check out your work. No need to tell us you're done – we'll know. 😎
+
+🚨 **Heads Up**: You might think the tasks are a bit open-ended or the instructions aren't super detailed. That’s intentional! We want to see how you creatively make the most out of the data and craft your own effective solutions.
 
 🚨 **Remember**: At the end of this doc, there's a "How to run" section left blank just for you. Please fill it in with instructions on how to run your code – it's important!
 
@@ -49,40 +49,53 @@ This is your chance to showcase your unique approach and thought process. Don't 
 
 ### Diamonds
 
-**Problem type**: regression
+**Problem type**: Regression
 
-**Dataset description**: [Diamonds readme](./datasets/diamonds/README.md)
+**Dataset description**: [Diamonds Readme](./datasets/diamonds/README.md)
 
-Don Francesco runs a jewelry. He is a very rich fellow, but his past is shady: be sure not to make him angry.
-Over the years, he collected data from 5000 diamonds.
-The dataset provides physical features of the stones, as well as their value, as estimated by a respected expert.
+Meet Don Francesco, the mystery-shrouded, fabulously wealthy owner of a jewelry empire. 
+
+He's got an impressive collection of 5000 diamonds and a temperament to match - so let's keep him smiling, shall we? 
+In our dataset, you'll find all the glittery details of these gems, from size to sparkle, along with their values 
+appraised by an expert. You can assume that the expert's valuations are in line with the real market value of the stones.
 
 #### Challenge 1
 
-**Francesco wants to know which factors influence the value of a diamond**: he is not an AI expert, 
-he wants simple and clear messages.
-However, he trusts no one - and, for sure, he does not trust you: so, he hired another data scientist 
-to get a second opinion on your work.
+Francesco wonders: **what makes a diamond valuable?** You should provide him with an answer.
+
+Don Francesco has been very clear with you: he is not a fan of tech jargon, so keep your message plain and simple. 
+However, he trusts no one - certainly not you. He's hired Luca, another data scientist, to double-check your findings (no pressure!). 
+Your mission is simple. 
+
 Create a Jupyter notebook to explain what Francesco should look at and why.
-Your code should be understandable by a data scientist, but your text should be clear for a layman.
+Your code should be understandable by a data scientist like Luca, but your text and visualizations should be clear for a layman like Francesco.
 
 #### Challenge 2
 
-Then, Francesco tells you that the expert providing him with the stone valuations disappeared.
-**He wants you to develop a model to predict the value of a new diamond given its characteristics**.
-He insists on a point: his customer are not easy-going, so he wants to know why a stone is given a certain value.
-Create a Jupyter notebook to meet Francesco's request.
+Plot twist! The expert who priced these gems has now vanished. 
+Francesco needs you to be the new diamond evaluator. 
+He's looking for a **model that predicts a gem's worth based on its characteristics**. 
+And, because Francesco's clientele is as demanding as he is, he wants the why behind every price tag. 
+
+Create another Jupyter notebook where you develop and evaluate your model.
 
 #### Challenge 3
 
-Francesco likes your model! Now he wants to use it. To improve the model, Francesco is open to hire a new expert and 
-let him value more stones.
-**Create an automatic pipeline capable of training a new instance of your model from the raw dataset**. 
+Good news! Francesco is impressed with the performance of your model. 
+Now, he's ready to hire a new expert and expand his diamond database. 
+
+**Develop an automated pipeline** that trains your model with fresh data, 
+keeping it as sharp as the diamonds it assesses.
 
 #### Challenge 4
 
-Finally, Francesco wants to embed your model in a web application, to allow for easy use by his employees.
-**Develop a REST API to expose the model predictions**.
+Finally, Francesco wants to bring your brilliance to his business's fingertips. 
+
+**Build a REST API** to integrate your model into a web app, 
+making it a cinch for his team to use. 
+Keep it developer-friendly – after all, not everyone speaks 'data scientist'!
+
+So, ready to add some sparkle to this challenge? Let's make these diamonds shine! 🌟💎✨
 
 ---
 
@@ -92,44 +105,47 @@ Finally, Francesco wants to embed your model in a web application, to allow for 
 
 **Dataset description**: [Power Load readme](./datasets/italian-power-load/README.md)
 
-It is your first day in the office and your first project is about time series forecasting.
-Your customer is Zap Inc, an imaginary Italian utility: they will provide you with the daily Italian Power Load from 2006 to 2022.
-Marta, a colleague of yours, provides you with a wise piece of advice: be careful about 2020, it was a very strange year...
+Welcome to your first day at the office, and what a charged-up project you have! 
+Your client is Zap Inc, a fictional power player in Italy. 
+They're handing you data on Italy's power load from 2006 to 2022. 
+Marta, your wise colleague, has a piece of advice for you: be careful with 2020, it was a very peculiar year.
 
 #### Challenge 1
 
 Zap Inc asks you for a complete report about the main feature of the power load series.
 The report should be understandable by a layman, but it should also provide enough details to be useful for a data scientist.
-**Create a Jupyter notebook to answer their query.**
+**Create a Jupyter Notebook that sheds light on the main characteristics of the power load data.** 
+Make it clear, make it insightful!
 
 #### Challenge 2
 
-Then, your first forecasting model.
-**You are asked to develop a long-term model to predict the power load 1 year ahead.**
-Disregard 2020, 2021, and 2022: use 2019 as test.
-Another piece of advice from your colleague Marta.
-The managers at Zap Inc are not AI experts, so they want to know how accurate your model is and why they should trust it.
-Be sure to answer their concerns in your notebook.
+Now, it's time to **predict the future**, well, at least a year into it. 
+Develop a long-term forecasting model for the power load with a forecasting horizon of one year ahead, but let's skip 2020-2022 and use 2019 as your testing ground. 
+Marta's advice: Zap's bosses aren't AI gurus, so your model's accuracy and explainability need to be crystal clear. 
+Illuminate these points with a second notebook.
 
 #### Challenge 3
 
-Long-term was great, but what about short term?
-**Your next task is to create a short-term model to predict the power load 1 day ahead.**
-Disregard 2020, 2021, and 2022: use 2019 as test.
-Keep im mind Marta's advice from the previous challenge! 
+After mastering the long-term, it's time to zoom in. 
+Your next challenge is to **predict the power load one day ahead**. 
+Again, sideline 2020-2022 and focus on 2019 for testing. 
+Keep Marta's wisdom in mind – clarity is key!
 
 #### Challenge 4
 
-Finally, production trial.
-**Pick one of your models and develop and end-to-end pipeline to train and evaluate it on 2020 and 2021.**
-Again, your good friend Marta has some suggestion for you. It looks like Luca, the new CTO at Zap, is a bit of a nerd.
-And he wants all the production code to be clean, well-structured, and easily maintanable.
-You'd better not to disappoint him!
+Choose one of your sparkling models and get it ready for the big leagues. 
+Develop an **end-to-end pipeline for training and evaluating your model** on 2020 and 2021 data. 
+Luca, the new CTO at Zap and a self-confessed nerd, demands code that's as clean and structured as it is maintainable. 
+Impress him!
 
 #### Challenge 5
 
-Zap Inc is not impressed by the performance of your model in 2020. You should defend your results.
-**Create a notebook to comment and explain the performance of your model in 2020.**
+2020 was a tough year for everyone, including your model. 
+Zap Inc isn't thrilled with its performance. 
+**Justify your model's performance in 2020** with a detailed notebook. 
+Explain the unexpected, defend your approach, and remember, every challenge is a learning curve!
+
+Ready to electrify your career with this project? Let's power through! ⚡🔌📈
 
 ---
 
@@ -139,53 +155,50 @@ Zap Inc is not impressed by the performance of your model in 2020. You should de
 
 **Dataset description**: [Employee churn readme](./datasets/employee-churn/README.md)
 
-You have just been contracted by Pear Inc, a multinational company worried about its poor talent retention.
-In the past few months, they collected data about their new employees. All of them come from classes 
-the company is sponsoring, yet many enter Pear just to leave a few months later.
-This is a huge waste of time and money.
+Your first client is Pear Inc, a multinational company worried about its poor talent retention.
+Pear has a peculiar hiring strategy. They offer free classes and hire the best students.
+The strategy is working, but many new hires leave the company after a few months. This is a huge waste of time and money.
 
-The HR department of the company wants you to understand what is going on and to prevent further bleeding.
+In the past few months, they collected a dataset with information about their employees and recorded whether they 
+churned or not. Due to the churning period being so short, they are confident that the history of each candidate
+is enough to predict the churn and the experience is Pear is not relevant.
 
-The main sponsor of the project is Gabriele, Head of Talent at Pear.
+Gabriele, the Head of Talent, is counting on you to put a plug in this problem. 
+And Fabio, an ML Engineer and new colleague of yours, will be eyeing your work too!
 
 #### Challenge 1
 
-Pear Inc wants you to understand what are the main traits separating the loyal employees from the others.
-**Create a Jupyter notebook to answer their query.**
-Gabriele is not an AI expert, so be sure to explain your results in a clear and simple way.
-However, you are also told that Fabio, an ML Engineer, will review your work: be sure to provide enough details to be useful for him.
+Pear Inc needs your help to figure out **what makes an employee stick versus split**. 
+Craft a Jupyter notebook to answer their question. 
+Keep it simple enough for Gabriele but detailed enough to dazzle Fabio.
 
 #### Challenge 2
 
-Then, a predicting model.
-**You are asked to create a model to predict whether a new employee would churn**.
-Gabriele tells you that he would like to know the probability of churn for each employee, so that he could take 
-corrective actions.
-Fabio has now joined Pear, and has some advice for you: Gabriele does not believe in black-box models, so
-be sure to provide him with compelling evidence that your model works.
+Next up, Pear Inc needs a crystal ball to foresee who will staty with them. 
+**Develop a model that predicts employee churn**, complete with churn probabilities to help Gabriele take timely action.
+Remember, Gabriele's no fan of black-box machines, and Fabio's looking for proof that your model's magic works.
 
 #### Challenge 3
 
-Wow, the model works great, but why does it? 
-**Try and make the model interpretable**, by highlighting the most important features and how each prediction is made.
-You'll need to explain your work to both Gabriele and Fabio, so be sure to include clear and simple text, 
-but feel free to use advanced techniques, if you feel that it is necessary.
+Your model's a hit, but why does it work wonders? 
+Time to add some transparency to your tech.
+**Make your model interpretable**, showcasing the key features and how each prediction is made. 
+Your audience: both Gabriele and Fabio, so balance simplicity with sophistication.
 
 #### Challenge 4
 
-Now, production trial. 
-**Develop and end-to-end pipeline to train a model given a new dataset.**
-You can assume that the new dataset has exactly the same structure as the provided one: 
-possible structural changes will be managed by your fellow data engineers.
-Fabio is a clean code lover: make sure not to disappoint him!
+Now, let's get your model production-ready. 
+**Build an end-to-end pipeline for training your model with new data sets.** 
+Assume the data structure stays the same, and keep your code clean and classy to impress Fabio, a clean code lover.
 
 #### Challenge 5
 
-Finally, Pear Inc is happy with your results!
-Now they want to embed your model in a web application. 
-**Develop a REST API to expose the model predictions**.
-Again, this is no longer about Gabriele, but Fabio will review and evolve your work.
-Be sure to provide him with clean and well-structured code.
+Bravo! Pear Inc loves your work, and now it's showtime for your model in their web app. 
+**Develop a REST API** to expose your model's predictions. 
+This time, it's all about Fabio - ensure your code is clean, structured, and ready for evolution.
+
+So, ready to tackle Pear Inc's perplexing problem and turn the tide on talent turnover? 
+Let's get cracking! 🍐💼🔍
 
 ---
 

@@ -1,16 +1,17 @@
 # Diamonds Dataset
-The dataset contains information on prices of diamonds, as well as various attributes of diamonds, some of which are known to influence their price (in 2008 US Dollars): the 4 Cs (`carat`, `cut`, `color`, and `clarity`), as well as some physical measurements (`depth`, `table`, `price`, `x`, `y`, and `z`). 
+This dataset provides detailed information on diamond prices and their attributes, some of which are known 
+to affect their value. The prices are reported in 2008 US Dollars.
 
-Physical measurements are explained by the following picture.
+Key features include the 4 Cs: `carat`, `cut`, `color`, and `clarity`, along with physical measurements 
+such as `depth`, `table`, `price`, `x`, `y`, and `z`.
+
+The **Carat** is a unit of mass, equal to 200 mg, used for measuring gemstones and pearls.
+The **Cut Grade** is an objective assessment of a diamond's light performance, often perceived as sparkle.
+
+Consider the following picture to better understand the variables and their values.
 
 ![Diamond measures](_md-images/diamonds-1.png)
 
-The carat is a unit of mass equal to 200 mg and is used for measuring gemstones and pearls. Cut grade is an objective measure of a diamond’s light performance, or, what we generally think of as sparkle.
-
-The figure below shows color grading of diamonds.
-
 ![Diamond colors](_md-images/diamonds-2.png)
-
-Lastly, the figure below shows clarity grading of diamonds.
 
 ![Diamond clarity](_md-images/diamonds-3.png)

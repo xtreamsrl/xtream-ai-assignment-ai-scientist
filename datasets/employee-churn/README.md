@@ -1,8 +1,11 @@
 # Employee Churn Dataset
-The dataset contains factors which may that influence a person's intention to leave its job.
+The dataset includes factors potentially influencing an individual's intention to leave their job. 
 
-It contains sociodemographic variables, as well as indicators of the past behaviour of each candidate.
-All the data were collected in a short period of time and each person corresponds to a single sample in the dataset.
+It comprises sociodemographic variables and indicators of each candidate's past behavior. 
+The data were collected over a brief period, with each individual representing a single sample in the dataset. 
+
+All variables, except the target, were gathered before the individual joined the company, 
+meaning `company_size` and `company_type` refer to the candidate's previous position.
 
 ### Features
 
