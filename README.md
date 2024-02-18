@@ -32,19 +32,6 @@ We'll be looking at a bunch of things to see how awesome your work is, like:
 
 🚨 **Keep This in Mind**: This isn't about building the fanciest model: we're more interested in your process and thinking.
 
-## Special Note for Interns
-
-If you're aiming for an internship, focus **only on Challenges 1 and 2** for the dataset you choose.
-
-We'll mainly look at:
-
-* Your workflow
-* How well you understand the problem and data
-* The approach to the analysis and clarity of your conclusions
-* How neat your code is (relative to your experience level)
-
-This is your chance to showcase your unique approach and thought process. Don't worry if your code isn't perfect or your model isn't top-notch yet. We've been in your shoes and are here to help you grow. 🌟
-
 ---
 
 ### Diamonds
